@@ -26,8 +26,16 @@ app.get("/api/hello", function (req, res) {
 
 app.get("/api/:date?", function (req, res) {
   let longDate = new Intl.DateTimeFormat('en-GB', {
-    dateStyle: 'full',
-    timeStyle: 'long',
+    weekday: "short",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+  minute: "numeric",
+  second: "numeric",
+  timeZoneName:'short', 
+  hour12: false,
+    
     timeZone: 'Europe/London',
   })
   if (!req.params.date) {
